@@ -35,7 +35,8 @@ const Header = () => {
           transition={{ delay: 0.3, type: "spring", stiffness: 200 }}
         >
           <Sparkles size={14} />
-          <span>Powered by Supadata</span>
+          <span>Powered by Beyond Gravity Solutions</span>
+
         </motion.div>
       </div>
       
