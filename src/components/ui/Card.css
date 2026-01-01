@@ -1,0 +1,66 @@
+.card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 2rem;
+  backdrop-filter: blur(20px);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
+  opacity: 0.5;
+}
+
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    var(--shadow-lg),
+    0 0 30px rgba(56, 189, 248, 0.2);
+  border-color: rgba(56, 189, 248, 0.4);
+}
+
+/* Card Variants */
+.card-elevated {
+  box-shadow: 
+    0 12px 48px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(56, 189, 248, 0.1);
+}
+
+.card-bordered {
+  border: 2px solid var(--glass-border);
+}
+
+.card-glow {
+  box-shadow: 
+    var(--shadow-lg),
+    0 0 40px rgba(56, 189, 248, 0.15);
+}
+
+/* Card Content Spacing */
+.card > *:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+.card > *:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+}
